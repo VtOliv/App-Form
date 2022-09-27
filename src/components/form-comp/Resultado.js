@@ -19,14 +19,14 @@ function Resultado(props) {
 
     return (
         <View style={styles.box}>
-            <If test={props.nome && props.email && props.cpf && props.telefone && props.dtnasc}>
+            <If test={props.nome && props.email && props.cpf && props.telefone && props.dtnasc && props.submit == true}>
                 <Text style={styles.Texto}>Nome: {props.nome}</Text>
                 <Text style={styles.Texto}>Email: {props.email}</Text>
                 <Text style={styles.Texto}>CPF: {props.cpf}</Text>
                 <Text style={styles.Texto}>Telefone: {props.telefone}</Text>
                 <Text style={styles.Texto}>Data de Nascimento: {props.dtnasc}</Text>
             </If>
-            <If test={!props.nome || !props.email || !props.cpf || !props.telefone || !props.dtnasc}>
+            <If test={!props.nome || !props.email || !props.cpf || !props.telefone || !props.dtnasc || props.submit == false}>
                 <Text style={styles.Texto}>Preencha o formulário para ver os dados</Text>
             </If>
         </View>

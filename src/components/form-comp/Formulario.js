@@ -10,9 +10,12 @@ function Formulario() {
     const [cpf, setCpf] = useState('');
     const [telefone, setTelefone] = useState('');
     const [dtnasc, setDtnasc] = useState('');
+    const [enviar, setEnviar] = useState(false);
 
 
     function logResults() {
+        setEnviar(true)
+
         console.warn(nome)
         console.warn(email)
         console.warn(cpf)
@@ -63,10 +66,10 @@ function Formulario() {
                     setDtnasc(value)
                 }} />
             <TouchableOpacity style={Styles.btn} key={"send"} onPress={() => logResults()} >
-                <Text>Enviar</Text>
+                <Text style={Styles.text}>Enviar</Text>
             </TouchableOpacity>
 
-            <Resultado nome={nome} email={email} cpf={cpf} telefone={telefone} dtnasc={dtnasc} />
+            <Resultado nome={nome} email={email} cpf={cpf} telefone={telefone} dtnasc={dtnasc} submit={enviar}/>
         </View>
     )
 }
@@ -76,14 +79,27 @@ const Styles = StyleSheet.create({
         marginBottom: 5,
         marginTop: 4,
         borderColor: 'gray',
-        borderWidth: 1
+        borderWidth: 1,
+        borderRadius: 5,
+        marginEnd: 10,
+        marginStart: 10
     },
     btn: {
+        width: 200,
         padding: 5,
         alignSelf: 'center',
         backgroundColor: 'lightblue',
-        marginBottom: 5
+        marginBottom: 5,
+        borderColor: 'gray',
+        borderWidth: 1,
+        borderRadius: 5,
     },
+    text: {
+        textAlign: 'center',
+        fontWeight: 'bold',
+        fontSize: 20
+    }
+
 
     
 })

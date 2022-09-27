@@ -8,7 +8,6 @@ const App = () => {
     <SafeAreaView>
       <Titulo principal="Cadastro" />
       <Formulario />
-      {/* <HomeScreen /> */}
     </SafeAreaView>
   );
 };
